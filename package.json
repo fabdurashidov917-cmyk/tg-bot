@@ -1,0 +1,21 @@
+{
+  "name": "kinobot",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Tarjima Kinolar LS - Telegram kino bot (Node.js)",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "migrate": "node scripts/migrate.js",
+    "import": "node scripts/import-mysql.js",
+    "clean:movies": "node scripts/clean-db.js",
+    "webhook": "node scripts/set-webhook.js"
+  },
+  "dependencies": {
+    "grammy": "^1.30.0",
+    "pg": "^8.13.1",
+    "dotenv": "^16.4.7",
+    "node-cron": "^3.0.3"
+  }
+}

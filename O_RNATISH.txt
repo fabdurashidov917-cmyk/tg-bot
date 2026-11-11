@@ -1,0 +1,16 @@
+KINOBOT — o'rnatish (Node.js 18+ va PostgreSQL 14+ kerak)
+
+1) npm install
+2) setup-db.sh ichidagi parolni o'zgartiring va ishga tushiring:  bash setup-db.sh
+3) Bazani yuklang:  psql "postgres://kinobot:PAROL@127.0.0.1:5432/kinobot" -f db/kinobot.sql
+4) cp .env.example .env  va BOT_TOKEN, BOT_USERNAME, ADMIN_IDS, SECRET_CHANNEL, DATABASE_URL ni to'ldiring
+5) Majburiy obuna kanalini bot admin panelidan qayta qo'shing (bazadagi kanal o'rniga "@kanal_username" yozilgan)
+6) Ishga tushirish:  npm start   yoki   pm2 start ecosystem.config.cjs
+   Webhook kerak bo'lsa: BOT_MODE=webhook, PUBLIC_URL, WEBHOOK_SECRET ni to'ldiring, nginx-kinobot.conf dan foydalaning.
+
+MUHIM: bazadagi barcha eski kino va serial kodlari tozalangan.
+Istalgan vaqtda kiritilgan kinolarni tozalab, bazani yana noldan boshlamoqchi bo'lsangiz:
+  npm run clean:movies
+
+Yangi botingizda admin panel orqali yangi kinolarni kodlari bilan joylashingiz mumkin.
+Foydalanuvchilar anonimlashtirilgan (ID 1000001... , ism "Foydalanuvchi N").
